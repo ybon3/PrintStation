@@ -1,0 +1,32 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:core="urn:import:com.sencha.gxt.widget.core.client"
+	xmlns:c="urn:import:com.sencha.gxt.widget.core.client.container"
+	xmlns:b="urn:import:com.sencha.gxt.widget.core.client.button"
+	xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+	xmlns:f="urn:import:com.sencha.gxt.widget.core.client.form"
+	xmlns:component="urn:import:com.dtc.printStation.client.ui.component">
+	
+	<ui:with field="panelLayoutData" type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData">
+		<ui:attributes width="1" height="1" />
+	</ui:with>
+	<ui:with field="gridLayoutData" type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData">
+		<ui:attributes width="1" height="1" />
+	</ui:with>
+	<ui:with field="toolbarLayoutData" type="com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer.VerticalLayoutData">
+		<ui:attributes width="1" height="-1" />
+	</ui:with>
+	
+	<c:VerticalLayoutContainer>
+		<core:ContentPanel headerVisible="false" layoutData="{panelLayoutData}">
+			<c:VerticalLayoutContainer>
+				<component:PrinterGrid ui:field="grid" layoutData="{gridLayoutData}" />
+				<toolbar:ToolBar ui:field="toolBar" borders="false" layoutData="{toolbarLayoutData}">
+					<toolbar:FillToolItem />
+					<core:Status ui:field="rowCount" width="100" />
+				</toolbar:ToolBar>
+			</c:VerticalLayoutContainer>
+		</core:ContentPanel>
+	</c:VerticalLayoutContainer>
+</ui:UiBinder> 
